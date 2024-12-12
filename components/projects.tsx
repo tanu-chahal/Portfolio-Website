@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { ProjectCard } from "./project-card"
 
 const projects = [
   {
@@ -42,23 +43,7 @@ export function Projects() {
         <h2 className="text-3xl font-bold gradient-text">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <motion.a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="block p-6 border rounded-lg hover:border-primary/50 transition-colors"
-            >
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-                <p className="text-foreground/80">{project.description}</p>
-                <p className="text-sm text-foreground/60">{project.tech}</p>
-              </div>
-            </motion.a>
+            <ProjectCard key={index} {...project} index={index} />
           ))}
         </div>
       </motion.div>
