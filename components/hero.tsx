@@ -4,8 +4,14 @@ import { motion } from "framer-motion"
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16">
-      <div className="text-center space-y-6">
+    <section className="min-h-screen flex items-center justify-center pt-16 relative">
+      <div className="hero-background">
+        <div className="hero-shape hero-shape-1" />
+        <div className="hero-shape hero-shape-2" />
+        <div className="hero-shape hero-shape-3" />
+      </div>
+      
+      <div className="text-center space-y-6 relative">
         <motion.h1 
           className="text-4xl md:text-6xl font-bold gradient-text"
           initial={{ opacity: 0, y: 20 }}
